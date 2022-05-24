@@ -16,7 +16,7 @@ const PortfolioContact = () => {
       </div>
       <div className='lg:w-3/4 sm:w-3/5'>
         <ul className='flex justify-evenly'>
-          <li><a href=""><BsGithub className='md:text-6xl text-4xl hover:text-primary transition duration-300 ' /></a></li>
+          <li><a href=""><BsGithub className=' rounded-full md:text-6xl text-4xl hover:text-primary transition duration-300 ' /></a></li>
           <li><a href=""><FaLinkedin className='md:text-6xl text-4xl hover:text-primary transition duration-300'  /></a></li>
           <li><a href=""><FaFacebook className='md:text-6xl text-4xl hover:text-primary transition duration-300' /></a></li>
           <li><a href=""><FaTwitterSquare className='md:text-6xl text-4xl hover:text-primary transition duration-300' /></a></li>
