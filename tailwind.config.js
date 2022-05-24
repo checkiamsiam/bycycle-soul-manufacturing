@@ -7,6 +7,8 @@ module.exports = {
       backgroundImage: {
         'bannerbg': "url('/src/assets/images/banner.png')",
         'reviewbg': "url('/src/assets/images/review-bg.png')",
+        'chosebg': "url('/src/assets/images/chosebg.png')",
+        'notfound': "url('/src/assets/images/not-found.png')"
       }
     },
   },

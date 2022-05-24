@@ -7,7 +7,7 @@ import { MdSell } from 'react-icons/md';
 const BusinessSummary = () => {
   return (
     <div className='container mx-auto'>
-      <div class="grid py-10 gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+      <div class="grid py-10 px-3 gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
 
         <div class="flex justify-evenly items-center shadow-md rounded-md hover:shadow-secondary hover:shadow-sm p-3">
           <div class=" text-primary w-1/3">
@@ -36,7 +36,7 @@ const BusinessSummary = () => {
           <div>
             <div class="stat-title text-success">Transition</div>
             <div class="stat-value text-accent">10+</div>
-            <div class="stat-value">Bank Service</div>
+            <div class="stat-value">Banks</div>
           </div>
         </div>
         <div class="flex justify-evenly items-center shadow-md rounded-md hover:shadow-secondary hover:shadow-sm  p-3">
@@ -46,7 +46,7 @@ const BusinessSummary = () => {
           <div>
             <div class="stat-title text-success">Servicing</div>
             <div class="stat-value text-accent">20+</div>
-            <div class="stat-value">Mechanics</div>
+            <div class="stat-value">Maker</div>
           </div>
         </div>
 
