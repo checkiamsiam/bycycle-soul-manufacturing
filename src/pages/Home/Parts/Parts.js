@@ -16,7 +16,7 @@ const Parts = () => {
               <p><span className='font-semibold uppercase'>Description:</span></p>
             </div>
             <div class="card-actions  justify-center absolute bottom-5 ">
-              <button class="btn  rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary">PLACE ORDER</button>
+              <button class="btn  rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary">BUY NOW</button>
             </div>
           </div>
         </div>
