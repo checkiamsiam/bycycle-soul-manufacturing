@@ -22,9 +22,9 @@ const HeaderDrawer = ({ isOpen, toggleDrawer }) => {
           <ul class="flex flex-col gap-5 uppercase font-semibold">
             <li className={'transition duration-200  hover:text-primary'}><Link to=''>home</Link></li>
             <li className={'transition duration-200  hover:text-primary'}><Link to=''> tools</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to=''>blogs</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to=''> contact</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to=''>portfolio</Link></li>
+            <li className={'transition duration-200  hover:text-primary'}><Link to='/blogs'>blogs</Link></li>
+            <li className={'transition duration-200  hover:text-primary'}><Link to='/contacts'> contact</Link></li>
+            <li className={'transition duration-200  hover:text-primary'}><Link to='/portfolio'>portfolio</Link></li>
           </ul>
         </div>
         <div className=''>

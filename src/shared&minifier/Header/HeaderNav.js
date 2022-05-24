@@ -55,7 +55,7 @@ const HeaderNav = () => {
         <ul class="flex gap-5 uppercase font-semibold">
           <li className='transition duration-200 text-accent hover:text-primary'><Link to='/'>home</Link></li>
           <li className='transition duration-200 text-accent hover:text-primary'><Link to=''> tools</Link></li>
-          <li className='transition duration-200 text-accent hover:text-primary'><Link to=''>blogs</Link></li>
+          <li className='transition duration-200 text-accent hover:text-primary'><Link to='/blogs'>blogs</Link></li>
           <li className='transition duration-200 text-accent hover:text-primary'><Link to=''> contact</Link></li>
           <li className='transition duration-200 text-accent hover:text-primary'><Link to='/portfolio'>portfolio</Link></li>
         </ul>
