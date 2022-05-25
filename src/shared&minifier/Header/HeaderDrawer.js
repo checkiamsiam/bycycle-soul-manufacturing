@@ -1,5 +1,6 @@
 import React from 'react';
 import Drawer from 'react-modern-drawer'
+import './Header.css'
 import { BsTelephoneFill } from 'react-icons/bs';
 import { BiMailSend } from 'react-icons/bi';
 import { FaFacebookF } from 'react-icons/fa';
@@ -7,7 +8,7 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa';
 import 'react-modern-drawer/dist/index.css'
 import { AiOutlineClose } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 const HeaderDrawer = ({ isOpen, toggleDrawer }) => {
   return (
@@ -20,11 +21,11 @@ const HeaderDrawer = ({ isOpen, toggleDrawer }) => {
         <span onClick={toggleDrawer} className='border-2 border-neutral btn btn-ghost rounded-full text-2xl absolute top-1 right-1'>  <AiOutlineClose /></span>
         <div  className='flex mt-20 mb-10 justify-center'>
           <ul class="flex flex-col gap-5 uppercase font-semibold">
-            <li className={'transition duration-200  hover:text-primary'}><Link to=''>home</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to=''> tools</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to='/blogs'>blogs</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to='/contacts'> contact</Link></li>
-            <li className={'transition duration-200  hover:text-primary'}><Link to='/portfolio'>portfolio</Link></li>
+            <li className={'transition duration-200  hover:text-primary'}><NavLink to='/'>home</NavLink></li>
+            <li className={'transition duration-200  hover:text-primary'}><NavLink to='/parts'>parts</NavLink></li>
+            <li className={'transition duration-200  hover:text-primary'}><NavLink to='/blogs'>blogs</NavLink></li>
+            <li className={'transition duration-200  hover:text-primary'}><NavLink to='/contacts'> contact</NavLink></li>
+            <li className={'transition duration-200  hover:text-primary'}><NavLink to='/portfolio'>portfolio</NavLink></li>
           </ul>
         </div>
         <div className=''>

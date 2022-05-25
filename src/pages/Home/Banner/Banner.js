@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-scroll'
 import './Banner.css'
 
 
@@ -13,7 +14,7 @@ const Banner = () => {
           <i className='italic text-sm'>Since 1997</i>
         </div>
         <div>
-          <button className='uppercase rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary '>explore more</button>
+          <Link to='whywebest' spy={true} smooth={true} className='uppercase rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary '>explore more</Link>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ import { HiStatusOnline } from 'react-icons/hi';
 
 const WhyWeBest = () => {
   return (
-    <div className='chose-section bg-chosebg md:h-screen bg-cover bg-no-repeat bg-center bg-fixed  flex items-center justify-center relative py-5'>
+    <div id='whywebest' className='chose-section bg-chosebg md:h-screen bg-cover bg-no-repeat bg-center bg-fixed  flex items-center justify-center relative py-5'>
       <div className='md:flex container mx-auto gap-10 md:px-10 px-5  z-20'>
         <div className='md:w-1/2 flex items-center justify-center'>
           <div>

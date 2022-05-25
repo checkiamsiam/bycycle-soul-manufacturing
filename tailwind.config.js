@@ -8,7 +8,8 @@ module.exports = {
         'bannerbg': "url('/src/assets/images/banner.png')",
         'reviewbg': "url('/src/assets/images/review-bg.png')",
         'chosebg': "url('/src/assets/images/chosebg.png')",
-        'notfound': "url('/src/assets/images/not-found.png')"
+        'notfound': "url('/src/assets/images/not-found.png')" ,
+        'logsin': "url('/src/assets/images/login-signup-bg.png')"
       }
     },
   },
@@ -21,7 +22,7 @@ module.exports = {
 
           "secondary": "#943d24",
 
-          "accent": "#63ede1",
+          "accent": "#c3b091",
 
           "neutral": "#D6D6D6",
 
