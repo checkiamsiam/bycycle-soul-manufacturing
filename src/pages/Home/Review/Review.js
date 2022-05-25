@@ -37,7 +37,7 @@ const Review = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="h-3/4"
       >
-        {data?.data?.map(r => <SwiperSlide>
+        {data?.data?.map(r => <SwiperSlide key={r._id}>
           <div className=' text-center md:w-4/6 w-full px-5 mx-auto py-5  lg:py-0'>
             <div class="avatar">
               <div class="md:w-32 w-24 rounded-full">
