@@ -14,11 +14,11 @@ import Loading from '../../../shared&minifier/Loading/Loading';
 
 const Review = () => {
 
-  const { isLoading , data } = useQuery('reviewData', () => axios.get('http://localhost:5000/reviews')
+  const { isLoading, data } = useQuery('reviewData', () => axios.get('https://bycycle-soul-server.herokuapp.com/reviews')
 
   )
 
-  if(isLoading){
+  if (isLoading) {
     return <Loading></Loading>
   }
   return (
@@ -41,13 +41,13 @@ const Review = () => {
           <div className=' text-center md:w-4/6 w-full px-5 mx-auto py-5  lg:py-0'>
             <div class="avatar">
               <div class="md:w-32 w-24 rounded-full">
-                {r?.img ? <img src={r?.img} alt='' /> 
-                :
-                 <div className="avatar placeholder">
-                  <div className="bg-primary-focus text-neutral-content rounded-full md:w-32 w-24">
-                    <span className="text-3xl">{r?.name?.slice(0, 1)}</span>
-                  </div>
-                </div>}
+                {r?.img ? <img src={r?.img} alt='' />
+                  :
+                  <div className="avatar placeholder">
+                    <div className="bg-primary-focus text-neutral-content rounded-full md:w-32 w-24">
+                      <span className="text-3xl">{r?.name?.slice(0, 1)}</span>
+                    </div>
+                  </div>}
               </div>
             </div>
             <h1 className='text-primary'>{r?.name}</h1>

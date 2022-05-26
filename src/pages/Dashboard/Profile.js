@@ -21,7 +21,7 @@ const Profile = () => {
 
 
   const upsertData = (body) => {
-    fetch(`http://localhost:5000/users?email=${currentUser?.email}`, {
+    fetch(`https://bycycle-soul-server.herokuapp.com/users?email=${currentUser?.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -34,7 +34,7 @@ const Profile = () => {
   }
 
   const update = (data) => {
-    const { name, profile , education , phone , adress , likedin} = data;
+    const { name, profile, education, phone, adress, likedin } = data;
     if (profile) {
       const formData = new FormData();
       formData.append('image', profile[0]);
@@ -54,17 +54,17 @@ const Profile = () => {
     if (name) {
       updateProfile({ displayName: name })
     }
-    if(education){
-    upsertData({education})
+    if (education) {
+      upsertData({ education })
     }
-    if(phone){
-    upsertData({phone})
+    if (phone) {
+      upsertData({ phone })
     }
-    if(adress){
-      upsertData({adress})
+    if (adress) {
+      upsertData({ adress })
     }
-    if(likedin){
-      upsertData({likedin})
+    if (likedin) {
+      upsertData({ likedin })
     }
     toast('Progress complete')
 
@@ -73,7 +73,7 @@ const Profile = () => {
 
   console.log(user);
   return (
-    <div className='mx-3'>
+    <div className='mx-3 z-20'>
       <h1 className='text-center text-accent italic'>Your Profile</h1>
       <div className=''>
         <div class="w-full  relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
@@ -142,23 +142,23 @@ const Profile = () => {
                 {...register("profile")} />
             </div>
             <div className="mb-6">
-              <label  className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">Education:</label>
-              <input defaultValue={currentUser?.education} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Your DP"
+              <label className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">Education:</label>
+              <input defaultValue={currentUser?.education} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Educations"
                 {...register("education")} />
             </div>
             <div className="mb-6">
-              <label  className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">Adress:</label>
-              <input defaultValue={currentUser?.adress} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Your DP"
+              <label className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">Adress:</label>
+              <input defaultValue={currentUser?.adress} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Adress"
                 {...register("adress")} />
             </div>
             <div className="mb-6">
-              <label  className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">Phone:</label>
-              <input defaultValue={currentUser?.phone} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Your DP"
+              <label className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">Phone:</label>
+              <input defaultValue={currentUser?.phone} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Phone Number"
                 {...register("phone")} />
             </div>
             <div className="mb-6">
               <label className="mr-4 font-bold inline-block mb-2 text-accent" htmlFor="text">LinkedIn:</label>
-              <input defaultValue={currentUser?.likedin} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Your DP"
+              <input defaultValue={currentUser?.likedin} type="text" id='dp' name='dp' className="border bg-gray-100 py-2 px-4 w-full outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="LikedIn Profile Link"
                 {...register("likedin")} />
             </div>
 

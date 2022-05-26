@@ -13,7 +13,7 @@ const Users = () => {
 
   const makeAdmin = (email) => {
 
-    fetch(`http://localhost:5000/users/${email}`, {
+    fetch(`https://bycycle-soul-server.herokuapp.com/users/${email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -34,7 +34,7 @@ const Users = () => {
 
 
   return (
-    <div className=' mt-5'>
+    <div className=' mt-5 z-20'>
       <h1 className='text-center text-accent italic'>Admin Panel</h1>
       <section className="container mx-auto p-6 font-mono">
         <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">

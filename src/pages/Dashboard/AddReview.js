@@ -10,32 +10,32 @@ const AddReview = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const handleReview = (data) => {
-    const postData = {name:user?.displayName , img : user?.photoURL , rating : parseInt(data?.rating) , reviewed : data?.text }
-    
+    const postData = { name: user?.displayName, img: user?.photoURL, rating: parseInt(data?.rating), reviewed: data?.text }
+
     const requestOptions = {
       method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json'  , 
-        'authorization' : `Barer ${localStorage.getItem('accessToken')}`
-     },
+      headers: {
+        'Content-Type': 'application/json',
+        'authorization': `Barer ${localStorage.getItem('accessToken')}`
+      },
       body: JSON.stringify(postData)
     };
-    fetch('http://localhost:5000/reviews', requestOptions)
+    fetch('https://bycycle-soul-server.herokuapp.com/reviews', requestOptions)
       .then(response => response.json())
       .then(data => {
-        if(data?.acknowledged){
+        if (data?.acknowledged) {
           toast.success('Review success-full')
           reset()
         }
       });
   }
 
-  if(loading){
+  if (loading) {
     return <Loading></Loading>
   }
   return (
     <div>
-      <div className=' my-5'>
+      <div className=' my-5 z-20'>
         <h1 className='text-center text-accent italic'>Add Review</h1>
         <div className=' text-left flex justify-center'>
           <form onSubmit={handleSubmit(handleReview)}>

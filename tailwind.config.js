@@ -9,7 +9,8 @@ module.exports = {
         'reviewbg': "url('/src/assets/images/review-bg.png')",
         'chosebg': "url('/src/assets/images/chosebg.png')",
         'notfound': "url('/src/assets/images/not-found.png')" ,
-        'logsin': "url('/src/assets/images/login-signup-bg.png')"
+        'logsin': "url('/src/assets/images/login-signup-bg.png')" ,
+        'dashboard': "url('/src/assets/images/dashboard.png')"
       }
     },
   },

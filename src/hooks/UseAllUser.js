@@ -9,7 +9,7 @@ import auth from "../firebase.init";
 
 const useAllUser = (user) => {
   const navigate = useNavigate();
-  const { isLoading, data: allUser, refetch } = useQuery(['allusers', user], () => fetch('http://localhost:5000/users', {
+  const { isLoading, data: allUser, refetch } = useQuery(['allusers', user], () => fetch('https://bycycle-soul-server.herokuapp.com/users', {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,6 +23,6 @@ const useAllUser = (user) => {
     }
     return res.json()
   }))
-return {isLoading , allUser , refetch}
+  return { isLoading, allUser, refetch }
 }
 export default useAllUser;
