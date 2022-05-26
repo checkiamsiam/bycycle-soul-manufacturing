@@ -34,7 +34,7 @@ const Users = () => {
 
 
   return (
-    <div className=' mt-5 z-20'>
+    <div className=' mt-5 '>
       <h1 className='text-center text-accent italic'>Admin Panel</h1>
       <section className="container mx-auto p-6 font-mono">
         <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">

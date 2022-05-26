@@ -73,7 +73,7 @@ const Profile = () => {
 
   console.log(user);
   return (
-    <div className='mx-3 z-20'>
+    <div className='mx-3 '>
       <h1 className='text-center text-accent italic'>Your Profile</h1>
       <div className=''>
         <div class="w-full  relative mt-4 shadow-2xl rounded my-24 overflow-hidden">

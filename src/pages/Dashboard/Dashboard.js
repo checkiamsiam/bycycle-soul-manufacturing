@@ -27,7 +27,7 @@ const Dashboard = () => {
     <div className=' pt-32'>
 
       <div className='container mx-auto lg:flex '>
-      <div className="drawer-side  z-50">
+      <div className="drawer-side  ">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-64  text-base-content lg:block hidden">
           {/* <!-- Sidebar content here --> */}
@@ -39,7 +39,7 @@ const Dashboard = () => {
           {currentUser?.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/makeAdmin'>Add Admin</Link></li>}
         </ul>
       </div>
-      <div className='w-full z-20'>
+      <div className='w-full '>
         <h1 className='text-primary text-4xl font-bold text-center '>Dashboard</h1>
         <div className="text-center lg:hidden block px-5">
           <Link to='/dashboard' className="tab tab-bordered" >My Profile</Link>

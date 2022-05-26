@@ -59,7 +59,7 @@ const HeaderNav = () => {
   }
 
   return (
-    <div className={` showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-blue-50'} `}>
+    <div className={` showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-blue-50'}  z-50`}>
       <div class="navbar  container mx-auto ">
         <div class="navbar-start">
           <Link to='/' className='flex items-center transition duration-1000 text-primary hover:text-secondary'>

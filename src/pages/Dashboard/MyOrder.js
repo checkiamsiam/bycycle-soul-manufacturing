@@ -42,7 +42,7 @@ const MyOrder = () => {
   console.log(yourOrder);
   return (
     <div>
-      <div className='rounded my-5 z-20'>
+      <div className='rounded my-5 '>
         <h1 className='text-center text-accent italic'>My Order</h1>
         <div className=' text-center'>
           <table className="w-full">

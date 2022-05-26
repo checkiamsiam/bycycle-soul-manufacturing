@@ -35,7 +35,7 @@ const AddReview = () => {
   }
   return (
     <div>
-      <div className=' my-5 z-20'>
+      <div className=' my-5 '>
         <h1 className='text-center text-accent italic'>Add Review</h1>
         <div className=' text-left flex justify-center'>
           <form onSubmit={handleSubmit(handleReview)}>
