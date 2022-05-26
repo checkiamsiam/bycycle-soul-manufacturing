@@ -12,11 +12,13 @@ import Loading from '../Loading/Loading';
 const HeaderNav = () => {
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
-  const firstLetter = user?.displayName?.slice(0, 1);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false)
   const [transparent, setTransparent] = useState(true)
   const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+
+  const firstLetter = user?.displayName?.slice(0, 1);
   const toggleDrawer = () => {
     setIsOpenDrawer((prevState) => !prevState)
   }

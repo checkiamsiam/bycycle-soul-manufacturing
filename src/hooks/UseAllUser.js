@@ -1,7 +1,8 @@
 import { signOut } from "firebase/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
+import auth from "../firebase.init";
+
 
 
 

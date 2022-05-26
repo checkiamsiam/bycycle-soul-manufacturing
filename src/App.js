@@ -14,6 +14,11 @@ import PurchasePage from './pages/PurchasePage/PurchasePage';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import RequireAuth from './shared&minifier/RequireAuth/RequireAuth';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Profile from './pages/Dashboard/Profile';
+import AddReview from './pages/Dashboard/AddReview';
+import RequireAdmin from './shared&minifier/RequireAuth/RequireAdmin';
+import Users from './pages/Dashboard/Users';
 
 function App() {
   return (
@@ -26,11 +31,16 @@ function App() {
         <Route path='/purchase/:id' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard /> </RequireAuth>}>
+          <Route index element={<Profile />} />
+          <Route path='myreview' element={<AddReview />} />
+          <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
+        </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
-      <ScrollToTop component={<BsArrowBarUp />} style={{ borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.53)' ,  zIndex: '50' , }} smooth />
-      <ToastContainer/>
+      <ScrollToTop component={<BsArrowBarUp />} style={{ borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.53)', zIndex: '50', }} smooth />
+      <ToastContainer />
     </div>
   );
 }

@@ -5,7 +5,7 @@ const Loading = () => {
   return (
 
     <div className='h-screen  flex justify-center items-center'>
-      <button className="  btn loading"></button>
+      <button className="  btn bg-slate-600 loading"></button>
     </div>
 
   );
