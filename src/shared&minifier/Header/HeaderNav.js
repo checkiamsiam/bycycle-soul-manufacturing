@@ -59,7 +59,7 @@ const HeaderNav = () => {
   }
 
   return (
-    <div className={` showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-base-100'} `}>
+    <div className={` showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-blue-50'} `}>
       <div class="navbar  container mx-auto ">
         <div class="navbar-start">
           <Link to='/' className='flex items-center transition duration-1000 text-primary hover:text-secondary'>
@@ -73,7 +73,7 @@ const HeaderNav = () => {
         <div class="navbar-center hidden lg:flex">
           <ul class="flex gap-5 uppercase font-semibold">
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/'>home</NavLink></li>
-            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/parts'> parts</NavLink></li>
+            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/allParts'> parts</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/blogs'>blogs</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/contact'> contact</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/portfolio'>portfolio</NavLink></li>
@@ -96,7 +96,7 @@ const HeaderNav = () => {
               <li className='text-center text-primary '>{user?.displayName}</li>
               <li className='text-center mb-2 text-primary'>{user?.email}</li>
               <li className='text-accent'><Link to="/dashboard">Dashboard</Link></li>
-              <li className='text-accent'><Link to="user_settings">Settings</Link></li>
+              <li className='text-accent'><Link to="/settings">Settings</Link></li>
               <li onClick={hadleLogout} className='text-accent'><button>Logout</button></li>
             </ul>
           </div>

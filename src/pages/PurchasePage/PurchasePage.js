@@ -10,25 +10,27 @@ const PurchasePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [user] = useAuthState(auth)
-  const { isLoading, error, data } = useQuery(['partsData' ], () => axios.get('http://localhost:5000/parts')
+  const { isLoading, error, data } = useQuery(['partsData'], () => axios.get('http://localhost:5000/parts')
   )
   const thisParts = data?.data?.find(p => p?._id === id);
   const [quantity, setQuantity] = useState(thisParts?.minOrdQnt)
   const [adress, setAdress] = useState('')
+  const [er, setEr] = useState('')
   const [phone, setphone] = useState(0)
   const [com, setCom] = useState('')
 
   const handleQnt = (e) => {
     setQuantity(e.target.value)
     if ((quantity < thisParts?.minOrdQnt)) {
-      toast.warning(`Min order quantity is ${thisParts?.minOrdQnt}`)
-    }
-    if ((quantity > thisParts?.available)) {
-      toast.warning(`We have only ${thisParts?.available}`)
+      setEr(`Min order quantity is ${thisParts?.minOrdQnt}`)
+    } else if ((quantity > thisParts?.available)) {
+      setEr(`We have only ${thisParts?.available}`)
+    } else {
+      setEr('')
     }
   }
 
-  const addOrder =  () => {
+  const addOrder = () => {
     const postItem = { name: thisParts?.name, qnt: quantity, bill: thisParts?.price * quantity, buyerEmail: user?.email, buyerName: user?.displayName, adress: adress, phone: phone, company: com };
     const requestOptions = {
       method: 'POST',
@@ -36,8 +38,8 @@ const PurchasePage = () => {
       body: JSON.stringify(postItem)
     };
     fetch('http://localhost:5000/orders', requestOptions)
-    .then(response => response.json())
-    .then(data => toast(data.message));
+      .then(response => response.json())
+      .then(data => toast(data.message));
   }
 
 
@@ -49,7 +51,7 @@ const PurchasePage = () => {
         <div className='md:w-2/3 flex flex-col items-center'>
           <div>
             <h1 className='text-xl text-primary'>Order Information</h1>
-            <h1 className='md:text-4xl text-2xl flex mb-5'><p className='w-1/3 font-bold'>Name:</p> <p className='w-full text-primary'>{thisParts?.name}</p></h1>
+            <h1 className='md:text-4xl text-2xl flex mb-5'><p className='w-full text-primary'>{thisParts?.name}</p></h1>
             <h1 className='text-xl flex my-1'><p className='w-1/3  font-bold '>Details:</p> <p className='w-full'>{thisParts?.dis}</p></h1>
             <h1 className='text-xl flex my-1'><p className='w-1/3  font-bold'>Price:</p> <p className='w-full'><span className='font-bold'>${thisParts?.price}(per unit)</span></p></h1>
             <h1 className='text-xl flex items-center my-1'><p className='w-1/3  font-bold'>Quantity:</p>
@@ -63,6 +65,7 @@ const PurchasePage = () => {
               <input type="number" onChange={(e) => setphone(e.target.value)} placeholder='Phone' class="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
             <h1 className='text-xl flex items-center my-1'><p className='w-1/3 font-bold'>Company or Organization:</p>
               <input type="text" onChange={(e) => setCom(e.target.value)} placeholder='Company' class="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
+            <p className='text-sm text-red-500 text-center'>{er}</p>
             <button onClick={addOrder} disabled={(quantity < thisParts?.minOrdQnt) || (quantity > thisParts?.available)} className='btn  rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary w-full my-3'>Place Order</button>
 
           </div>

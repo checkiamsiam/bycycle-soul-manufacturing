@@ -19,6 +19,13 @@ import Profile from './pages/Dashboard/Profile';
 import AddReview from './pages/Dashboard/AddReview';
 import RequireAdmin from './shared&minifier/RequireAuth/RequireAdmin';
 import Users from './pages/Dashboard/Users';
+import AllParts from './pages/AllParts/AllParts';
+import Contact from './pages/Contact/Contact';
+import Settings from './pages/Settings/Settings';
+import ManageOrder from './pages/Dashboard/ManageOrder';
+import AddProduct from './pages/Dashboard/AddProduct';
+import ManageProduct from './pages/Dashboard/ManageProduct';
+import MyOrder from './pages/Dashboard/MyOrder';
 
 function App() {
   return (
@@ -29,13 +36,22 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/purchase/:id' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
+        <Route path='/settings' element={<Settings></Settings>}></Route>
+        <Route path='/allParts' element={<AllParts></AllParts>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /> </RequireAuth>}>
           <Route index element={<Profile />} />
-          <Route path='myreview' element={<AddReview />} />
-          <Route path='users' element={<RequireAdmin><Users /></RequireAdmin>} />
+          <Route path='addReview' element={<AddReview />} />
+          <Route path='myOrder' element={<MyOrder />} />
+          <Route path='manageOrder' element={<RequireAdmin><ManageOrder /></RequireAdmin>} />
+          <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
+          <Route path='manageProduct' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />
+          <Route path='makeAdmin' element={<RequireAdmin><Users /></RequireAdmin>} />
         </Route>
+
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

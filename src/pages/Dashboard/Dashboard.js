@@ -30,22 +30,22 @@ const Dashboard = () => {
         <ul className="menu p-4 overflow-y-auto w-64 bg-base-100 text-base-content lg:block hidden">
           {/* <!-- Sidebar content here --> */}
           <li className='font-semibold text-accent'><Link to='/dashboard'>My Profile</Link></li>
-          {currentUser?.role === 'admin' ? <li className='font-semibold text-accent'><Link to='/dashboard/users'>Manage Orders</Link></li> :  <li className='font-semibold text-accent'><Link to='/dashboard'>My Order</Link></li>}
-          {currentUser.role === 'member' && <li className='font-semibold text-accent'><Link to='/dashboard/myreview'>Add Reviews</Link></li>}
-          {currentUser.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/users'>Add Product</Link></li>}
-          {currentUser.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/users'>Manage Product</Link></li>}
-          {currentUser.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/users'>Add Admin</Link></li>}
+          {currentUser?.role === 'admin' ? <li className='font-semibold text-accent'><Link to='/dashboard/manageOrder'>Manage Orders</Link></li> : <li className='font-semibold text-accent'><Link to='/dashboard/myOrder'>My Order</Link></li>}
+          {currentUser?.role === 'member' && <li className='font-semibold text-accent'><Link to='/dashboard/addReview'>Add Reviews</Link></li>}
+          {currentUser?.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/addProduct'>Add Product</Link></li>}
+          {currentUser?.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/manageProduct'>Manage Product</Link></li>}
+          {currentUser?.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/makeAdmin'>Add Admin</Link></li>}
         </ul>
       </div>
       <div className='w-full'>
         <h1 className='text-primary text-4xl font-bold text-center '>Dashboard</h1>
         <div className="text-center lg:hidden block px-5">
-        <li className='font-semibold text-accent'><Link to='/dashboard' className="tab tab-bordered" >My Profile</Link></li>
-          {currentUser?.role === 'admin' ? <li className='font-semibold text-accent'><Link className="tab tab-bordered ml-2" to='/dashboard/users'>Manage Orders</Link></li> :  <li className='font-semibold text-accent'><Link className="tab tab-bordered ml-2" to='/dashboard'>My Order</Link></li>}
-          {currentUser.role === 'member' && <li className='font-semibold text-accent'><Link className="tab tab-bordered ml-2" to='/dashboard/myreview'>Add Reviews</Link></li>}
-          {currentUser.role === 'admin' && <li className='font-semibold text-accent'><Link className="tab tab-bordered ml-2" to='/dashboard/users'>Add Product</Link></li>}
-          {currentUser.role === 'admin' && <li className='font-semibold text-accent'><Link className="tab tab-bordered ml-2" to='/dashboard/users'>Manage Product</Link></li>}
-          {currentUser.role === 'admin' && <li className='font-semibold text-accent'><Link className="tab tab-bordered ml-2" to='/dashboard/users'>Add Admin</Link></li>}
+          <Link to='/dashboard' className="tab tab-bordered" >My Profile</Link>
+          {currentUser?.role === 'admin' ? <Link className="tab tab-bordered ml-2" to='/dashboard/manageOrder'>Manage Orders</Link> : <Link className="tab tab-bordered ml-2" to='/dashboard/myOrder'>My Order</Link>}
+          {currentUser?.role === 'member' && <Link className="tab tab-bordered ml-2" to='/dashboard/addReview'>Add Reviews</Link>}
+          {currentUser?.role === 'admin' && <Link className="tab tab-bordered ml-2" to='/dashboard/addProduct'>Add Product</Link>}
+          {currentUser?.role === 'admin' && <Link className="tab tab-bordered ml-2" to='/dashboard/manageProduct'>Manage Product</Link>}
+          {currentUser?.role === 'admin' && <Link className="tab tab-bordered ml-2" to='/dashboard/makeAdmin'>Add Admin</Link>}
         </div>
         <Outlet />
       </div>
