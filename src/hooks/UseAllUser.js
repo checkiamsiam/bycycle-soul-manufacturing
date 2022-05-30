@@ -1,4 +1,5 @@
 import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
@@ -7,14 +8,13 @@ import auth from "../firebase.init";
 
 
 
-const useAllUser = (user) => {
+const useAllUser = () => {
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
-  const { isLoading, data: allUser, refetch } = useQuery(['allusers', user], () => fetch('https://bycycle-soul-server.herokuapp.com/users', {
-    method: 'GET',
-    headers: {
-      'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    }
-  }).then(res => {
+
+  const { isLoading, data: allUser, refetch , } = useQuery(['allUsers', user], () => fetch('http://localhost:5000/users')
+
+  .then(res => {
     if (res.status === 403) {
       signOut(auth)
       localStorage.removeItem('accessToken')

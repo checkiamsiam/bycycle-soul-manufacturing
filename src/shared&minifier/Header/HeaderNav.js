@@ -45,6 +45,17 @@ const HeaderNav = () => {
     }
   }
 
+  const [hideness, setHideness] = useState(false)
+  const controlNavbar = () => {
+    if (window.scrollY > 0) {
+      setHideness(true);
+    } else {
+      setHideness(false);
+    }
+  }
+
+  window.addEventListener('scroll', controlNavbar);
+
   window.addEventListener('scroll', controlNavbar1);
   window.addEventListener('scroll', controlNavbar2);
 
@@ -54,32 +65,32 @@ const HeaderNav = () => {
     await navigate('/')
   }
 
-  if(loading){
+  if (loading) {
     return <Loading></Loading>
   }
 
   return (
-    <div className={` showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-blue-50'}  z-50`}>
-      <div class="navbar  container mx-auto ">
-        <div class="navbar-start">
+    <div className={`${hideness ? 'fixed' : 'sticky'} top-0 showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-white shadow-lg'}  z-50`}>
+      <div className="navbar  container mx-auto ">
+        <div className="navbar-start">
           <Link to='/' className='flex items-center transition duration-1000 text-primary hover:text-secondary'>
             <img className='sm:w-12 w-8 mr-2' src={logo} alt="" />
             <div className='font-semibold'>
-              <p class="normal-case sm:text-2xl text-lg">ByCycle Soul</p>
-              <p class="sm:text-sm text-xs sm:text-neutral">Manufacturing</p>
+              <p className="normal-case sm:text-2xl text-lg">ByCycle Soul</p>
+              <p className="sm:text-sm text-xs sm:text-neutral">Manufacturing</p>
             </div>
           </Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="flex gap-5 uppercase font-semibold">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="flex gap-5 uppercase font-semibold">
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/'>home</NavLink></li>
-            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/allParts'> parts</NavLink></li>
+            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/'>about us</NavLink></li>
+            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/allParts'>Shop</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/blogs'>blogs</NavLink></li>
-            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/contact'> contact</NavLink></li>
-            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/portfolio'>portfolio</NavLink></li>
+            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/contact'> contacts</NavLink></li>
           </ul>
         </div>
-        <div class="navbar-end flex items-center">
+        <div className="navbar-end flex items-center">
           {user ? <div className="dropdown dropdown-end ">
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
               {user?.photoURL ? <div className="w-9 rounded-full">
@@ -95,6 +106,7 @@ const HeaderNav = () => {
             <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li className='text-center text-primary '>{user?.displayName}</li>
               <li className='text-center mb-2 text-primary'>{user?.email}</li>
+              <li className='text-accent'><Link to="/profile">Profile</Link></li>
               <li className='text-accent'><Link to="/dashboard">Dashboard</Link></li>
               <li className='text-accent'><Link to="/settings">Settings</Link></li>
               <li onClick={hadleLogout} className='text-accent'><button>Logout</button></li>
@@ -103,10 +115,10 @@ const HeaderNav = () => {
             :
 
             <div className="md:ml-5">
-              <Link to='/login' class="md:text-lg btn btn-ghost text-xs link text-primary ">Login<span className='sm:block hidden'>/Register</span></Link>
+              <Link to='/login' className="md:text-lg btn btn-ghost text-xs link text-primary ">Login<span className='sm:block hidden'>/Register</span></Link>
             </div>}
 
-          <button onClick={toggleDrawer} class="btn btn-ghost lg:hidden">
+          <button onClick={toggleDrawer} className="btn btn-ghost lg:hidden">
             <IoMenu className='text-3xl text-primary' />
           </button>
 

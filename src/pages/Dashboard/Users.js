@@ -13,7 +13,7 @@ const Users = () => {
 
   const makeAdmin = (email) => {
 
-    fetch(`https://bycycle-soul-server.herokuapp.com/users/${email}`, {
+    fetch(`http://localhost:5000/users/${email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

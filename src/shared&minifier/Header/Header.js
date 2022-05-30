@@ -22,11 +22,11 @@ const Header = () => {
 
   return (
     <div className='fixed top-0 w-full bg-transparent z-50'>
-      <div className={`${hideness ? 'absolute -top-20 ' : 'top-0'} transition duration-500 lg:block hidden py-2`}>
+      <div className={`${hideness && 'hideNav' } transition duration-500 lg:block hidden py-2`}>
         <div className='container mx-auto flex justify-between'>
           <div className='flex gap-5'>
             <div className='flex items-center cursor-pointer transition duration-500 hover:text-primary text-accent'><BsTelephoneFill className='text-primary' />+8801910072661</div>
-            <div className='flex items-center cursor-pointer transition duration-500 hover:text-primary text-accent'><BiMailSend className='text-xl mr-1 text-primary' />issiam02415@gmail.com</div>
+            <div className='flex items-center cursor-pointer transition duration-500 hover:text-primary text-accent'><BiMailSend className='text-xl mr-1 text-primary' />soulmanufacture@hotmail.com</div>
           </div>
           <div className='flex gap-5 items-center '>
             <a href="" target="_blank" className='hover:bg-neutral p-2 rounded-full'><FaFacebookF className='text-primary' /></a>

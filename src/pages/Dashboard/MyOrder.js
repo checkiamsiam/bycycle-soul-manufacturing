@@ -8,7 +8,7 @@ import Loading from '../../shared&minifier/Loading/Loading';
 
 const MyOrder = () => {
   const [user, loading] = useAuthState(auth);
-  const { isLoading, data , refetch} = useQuery('ordersData', () => axios.get('https://bycycle-soul-server.herokuapp.com/orders')
+  const { isLoading, data, refetch } = useQuery('ordersData', () => axios.get('http://localhost:5000/orders')
   )
   if (loading || isLoading) {
     return <Loading></Loading>
@@ -26,14 +26,14 @@ const MyOrder = () => {
         <p>Requesting for canceling the order?</p>
       ),
       onSubmit: () => {
-        fetch(`https://bycycle-soul-server.herokuapp.com/orders/${id}`, {
+        fetch(`http://localhost:5000/orders/${id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())
           .then(data => refetch())
       },
       onCancel: () => {
-        
+
       },
     })
   };

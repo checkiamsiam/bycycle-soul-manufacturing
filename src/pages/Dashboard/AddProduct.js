@@ -31,7 +31,7 @@ const AddProduct = () => {
             },
             body: JSON.stringify(postItem)
           };
-          fetch('https://bycycle-soul-server.herokuapp.com/parts', requestOptions)
+          fetch('http://localhost:5000/parts', requestOptions)
             .then(response => response.json())
             .then(data => {
               if (data?.acknowledged) {

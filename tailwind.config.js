@@ -10,7 +10,8 @@ module.exports = {
         'chosebg': "url('/src/assets/images/chosebg.png')",
         'notfound': "url('/src/assets/images/not-found.png')" ,
         'logsin': "url('/src/assets/images/login-signup-bg.png')" ,
-        'dashboard': "url('/src/assets/images/dashboard.png')"
+        'dashboard': "url('/src/assets/images/dashboard.png')" ,
+        'portfolio': "url('/src/assets/images/portfolio.png')" ,
       }
     },
   },

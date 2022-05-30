@@ -20,7 +20,7 @@ const AddReview = () => {
       },
       body: JSON.stringify(postData)
     };
-    fetch('https://bycycle-soul-server.herokuapp.com/reviews', requestOptions)
+    fetch('http://localhost:5000/reviews', requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data?.acknowledged) {

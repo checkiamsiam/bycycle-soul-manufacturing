@@ -17,7 +17,7 @@ const Dashboard = () => {
     return <Loading></Loading>
   }
 
-  const currentUser = allUser.find(u => u?.email === user?.email)
+  const currentUser = allUser?.find(u => u?.email === user?.email)
 
 
 
@@ -31,8 +31,7 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 overflow-y-auto w-64  text-base-content lg:block hidden">
           {/* <!-- Sidebar content here --> */}
-          <li className='font-semibold text-accent'><Link to='/dashboard'>My Profile</Link></li>
-          {currentUser?.role === 'admin' ? <li className='font-semibold text-accent'><Link to='/dashboard/manageOrder'>Manage Orders</Link></li> : <li className='font-semibold text-accent'><Link to='/dashboard/myOrder'>My Order</Link></li>}
+          {currentUser?.role === 'admin' ? <li className='font-semibold text-accent'><Link to='/dashboard'>Manage Orders</Link></li> : <li className='font-semibold text-accent'><Link to='/dashboard'>My Order</Link></li>}
           {currentUser?.role === 'member' && <li className='font-semibold text-accent'><Link to='/dashboard/addReview'>Add Reviews</Link></li>}
           {currentUser?.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/addProduct'>Add Product</Link></li>}
           {currentUser?.role === 'admin' && <li className='font-semibold text-accent'><Link to='/dashboard/manageProduct'>Manage Product</Link></li>}
@@ -42,8 +41,7 @@ const Dashboard = () => {
       <div className='w-full '>
         <h1 className='text-primary text-4xl font-bold text-center '>Dashboard</h1>
         <div className="text-center lg:hidden block px-5">
-          <Link to='/dashboard' className="tab tab-bordered" >My Profile</Link>
-          {currentUser?.role === 'admin' ? <Link className="tab tab-bordered ml-2" to='/dashboard/manageOrder'>Manage Orders</Link> : <Link className="tab tab-bordered ml-2" to='/dashboard/myOrder'>My Order</Link>}
+          {currentUser?.role === 'admin' ? <Link className="tab tab-bordered ml-2" to='/dashboard'>Manage Orders</Link> : <Link className="tab tab-bordered ml-2" to='/dashboard'>My Order</Link>}
           {currentUser?.role === 'member' && <Link className="tab tab-bordered ml-2" to='/dashboard/addReview'>Add Reviews</Link>}
           {currentUser?.role === 'admin' && <Link className="tab tab-bordered ml-2" to='/dashboard/addProduct'>Add Product</Link>}
           {currentUser?.role === 'admin' && <Link className="tab tab-bordered ml-2" to='/dashboard/manageProduct'>Manage Product</Link>}

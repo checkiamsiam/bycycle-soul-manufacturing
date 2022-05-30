@@ -26,8 +26,22 @@ import ManageOrder from './pages/Dashboard/ManageOrder';
 import AddProduct from './pages/Dashboard/AddProduct';
 import ManageProduct from './pages/Dashboard/ManageProduct';
 import MyOrder from './pages/Dashboard/MyOrder';
+import Loading from './shared&minifier/Loading/Loading';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import useAllUser from './hooks/UseAllUser';
 
 function App() {
+  const [user, loading] = useAuthState(auth);
+  
+  const { isLoading, allUser , refetch } = useAllUser();
+  
+    if (loading ) {
+      return <Loading></Loading>
+    }
+  
+
+  const currentUser = allUser?.find(u => u?.email === user?.email)
   return (
     <div>
       <Header></Header>
@@ -39,14 +53,18 @@ function App() {
         <Route path='/settings' element={<Settings></Settings>}></Route>
         <Route path='/allParts' element={<AllParts></AllParts>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
+        <Route path='/profile' element={<Profile></Profile>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
 
         <Route path='/dashboard' element={<RequireAuth> <Dashboard /> </RequireAuth>}>
-          <Route index element={<Profile />} />
+         
+         
+          {currentUser?.role === 'admin' ? (<Route index element={<RequireAdmin><ManageOrder /></RequireAdmin>} />) :
+            (<Route index element={<MyOrder />} />)}
+
+
           <Route path='addReview' element={<AddReview />} />
-          <Route path='myOrder' element={<MyOrder />} />
-          <Route path='manageOrder' element={<RequireAdmin><ManageOrder /></RequireAdmin>} />
           <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>} />
           <Route path='manageProduct' element={<RequireAdmin><ManageProduct /></RequireAdmin>} />
           <Route path='makeAdmin' element={<RequireAdmin><Users /></RequireAdmin>} />

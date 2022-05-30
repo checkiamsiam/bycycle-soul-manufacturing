@@ -6,7 +6,7 @@ import Loading from '../../../shared&minifier/Loading/Loading';
 
 const Parts = () => {
   const navigate = useNavigate();
-  const { isLoading, data: latest } = useQuery('partsDataLatest', () => axios.get('https://bycycle-soul-server.herokuapp.com/partsLatest')
+  const { isLoading, data: latest } = useQuery('partsDataLatest', () => axios.get('http://localhost:5000/partsLatest')
   )
 
   const latestProduct = latest?.data?.slice(0, 6)
@@ -21,13 +21,13 @@ const Parts = () => {
       <div>
         <h1 className='text-primary text-center text-4xl uppercase my-5'>Latest Product</h1>
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-5'>
-          {latestProduct?.map(p => <div key={p._id} class=" h-screen mx-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700  overflow-hidden hover:shadow-orange-200">
+          {latestProduct?.map(p => <div key={p._id} className=" h-screen mx-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700  overflow-hidden hover:shadow-orange-200">
             <div className='overflow-hidden w-full h-1/2 '>
-              <img class="rounded-t-lg w-full h-full  transition duration-500 hover:scale-110" src={p?.img} alt="" />
+              <img className="rounded-t-lg w-full h-full  transition duration-500 hover:scale-110" src={p?.img} alt="" />
             </div>
-            <div class="p-5 ">
+            <div className="p-5 ">
               <div>
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{p?.name}</h5>
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{p?.name}</h5>
               </div>
 
               <div className='flex flex-col justify-between'>
@@ -39,7 +39,7 @@ const Parts = () => {
                 </div>
 
                 <div className=' w-full mt-5 '>
-                  <button onClick={() => navigate(`/purchase/${p._id}`)} class="btn  rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary w-full">TO BUY NOW</button>
+                  <button onClick={() => navigate(`/purchase/${p._id}`)} className="btn  rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary w-full">TO BUY NOW</button>
                 </div>
               </div>
 

@@ -13,8 +13,8 @@ const WhyWeBest = () => {
           <div>
             <div> <Link to='/' className='flex items-center transition duration-1000 text-primary hover:text-secondary'>
               <div className='font-semibold'>
-                <p class="normal-case sm:text-2xl text-lg">ByCycle Soul</p>
-                <p class="sm:text-sm text-xs text-neutral">Manufacturing</p>
+                <p className="normal-case sm:text-2xl text-lg">ByCycle Soul</p>
+                <p className="sm:text-sm text-xs text-neutral">Manufacturing</p>
               </div>
             </Link></div>
             <p className='text-white mt-5 text-xl md:text-2xl italic '>

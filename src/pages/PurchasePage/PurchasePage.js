@@ -10,7 +10,7 @@ const PurchasePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [user] = useAuthState(auth)
-  const { isLoading, error, data } = useQuery(['partsData'], () => axios.get('https://bycycle-soul-server.herokuapp.com/parts')
+  const { isLoading, error, data } = useQuery(['partsData'], () => axios.get('http://localhost:5000/parts')
   )
   const thisParts = data?.data?.find(p => p?._id === id);
   const [quantity, setQuantity] = useState(thisParts?.minOrdQnt)
@@ -35,12 +35,12 @@ const PurchasePage = () => {
     const requestOptions = {
       method: 'POST',
       headers: {
-         'Content-Type': 'application/json' , 
-         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-        },
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+      },
       body: JSON.stringify(postItem)
     };
-    fetch('https://bycycle-soul-server.herokuapp.com/orders', requestOptions)
+    fetch('http://localhost:5000/orders', requestOptions)
       .then(response => response.json())
       .then(data => toast(data.message));
   }
@@ -58,16 +58,16 @@ const PurchasePage = () => {
             <h1 className='text-xl flex my-1'><p className='w-1/3  font-bold '>Details:</p> <p className='w-full'>{thisParts?.dis}</p></h1>
             <h1 className='text-xl flex my-1'><p className='w-1/3  font-bold'>Price:</p> <p className='w-full'><span className='font-bold'>${thisParts?.price}(per unit)</span></p></h1>
             <h1 className='text-xl flex items-center my-1'><p className='w-1/3  font-bold'>Quantity:</p>
-              <input type="number" onChange={handleQnt} defaultValue={quantity} class="input input-bordered w-full text-center mx-3 text-xl font-semibold" /></h1>
+              <input type="number" onChange={handleQnt} defaultValue={quantity} className="input input-bordered w-full text-center mx-3 text-xl font-semibold" /></h1>
             <h1 className='text-xl flex my-1'><p className='w-1/3  font-bold'>Total Price:</p> <p className='w-full'><span className='font-bold'>${thisParts?.price * quantity}</span></p></h1>
             <h1 className='text-xl flex my-1'><p className='w-1/3  font-bold '>Buyer:</p> <p className='w-full'>{user?.displayName}</p></h1>
             <h1 className='text-xl flex my-2'><p className='w-1/3  font-bold '>Buyer Email:</p> <p className='w-full  '>{user?.email}</p></h1>
             <h1 className='text-xl flex items-center my-1'><p className='w-1/3 font-bold'>Adress:</p>
-              <input type="text" onChange={(e) => setAdress(e.target.value)} placeholder='Adress' class="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
+              <input type="text" onChange={(e) => setAdress(e.target.value)} placeholder='Adress' className="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
             <h1 className='text-xl flex items-center my-1'><p className='w-1/3 font-bold' >Phone:</p>
-              <input type="number" onChange={(e) => setphone(e.target.value)} placeholder='Phone' class="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
+              <input type="number" onChange={(e) => setphone(e.target.value)} placeholder='Phone' className="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
             <h1 className='text-xl flex items-center my-1'><p className='w-1/3 font-bold'>Company or Organization:</p>
-              <input type="text" onChange={(e) => setCom(e.target.value)} placeholder='Company' class="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
+              <input type="text" onChange={(e) => setCom(e.target.value)} placeholder='Company' className="input input-bordered mx-3 text-xl font-semibold w-full" /></h1>
             <p className='text-sm text-red-500 text-center'>{er}</p>
             <button onClick={addOrder} disabled={(quantity < thisParts?.minOrdQnt) || (quantity > thisParts?.available)} className='btn  rounded-md btn-sm md:btn bg-gradient-to-r from-primary to-secondary w-full my-3'>Place Order</button>
 

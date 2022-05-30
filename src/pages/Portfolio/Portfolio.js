@@ -5,10 +5,12 @@ import Skill from './Skill/Skill';
 
 const Portfolio = () => {
   return (
-    <div className='md:mt-28 mt-20 container mx-auto'>
+    <div className='bg-portfolio bg-no-repeat bg-cover bg-center bg-fixed text-white'>
+      <div className='md:pt-28 pt-20 container mx-auto '>
       <PortfolioHeader></PortfolioHeader>
       <PortfolioContact></PortfolioContact>
       <Skill></Skill>
+    </div>
     </div>
   );
 };
