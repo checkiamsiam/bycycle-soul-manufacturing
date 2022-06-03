@@ -12,7 +12,7 @@ const Profile = () => {
   const [user, loading] = useAuthState(auth);
   const [updateProfile, updating] = useUpdateProfile(auth);
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const { isLoading, allUser, refetch } = useAllUser();
+  const { isLoading, allUser, refetch } = useAllUser(user);
   const currentUser = allUser?.find(u => u?.email === user?.email)
   console.log(currentUser);
   if (updating || loading) {
@@ -21,7 +21,7 @@ const Profile = () => {
 
 
   const upsertData = (body) => {
-    fetch(`http://localhost:5000/users?email=${currentUser?.email}`, {
+    fetch(`https://bycycle-soul-server.herokuapp.com/users?email=${currentUser?.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

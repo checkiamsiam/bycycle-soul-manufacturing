@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title text-primary">Legal</span>
-          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Terms and conditions</a>
           <a className="link link-hover">Privacy policy</a>
         </div>
       </footer>

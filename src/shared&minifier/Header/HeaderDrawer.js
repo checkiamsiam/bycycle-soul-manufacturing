@@ -22,7 +22,7 @@ const HeaderDrawer = ({ isOpen, toggleDrawer }) => {
         <div className='flex mt-20 mb-10 justify-center'>
           <ul className="flex flex-col gap-6 uppercase font-semibold">
             <li className={'transition duration-200  hover:text-primary text-xl'}><NavLink to='/'>home</NavLink></li>
-            <li className={'transition duration-200  hover:text-primary text-xl'}><NavLink to='/'>about us</NavLink></li>
+            <li className={'transition duration-200  hover:text-primary text-xl'}><NavLink to='/about'>about us</NavLink></li>
             <li className={'transition duration-200  hover:text-primary text-xl'}><NavLink to='/allParts'>Shop</NavLink></li>
             <li className={'transition duration-200  hover:text-primary text-xl'}><NavLink to='/blogs'>blogs</NavLink></li>
             <li className={'transition duration-200  hover:text-primary text-xl'}><NavLink to='/contact'> contacts</NavLink></li>

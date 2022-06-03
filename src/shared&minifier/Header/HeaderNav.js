@@ -37,7 +37,7 @@ const HeaderNav = () => {
 
 
   const controlNavbar2 = () => {
-    if (window.scrollY > 250) {
+    if (window.scrollY > 50) {
 
       setTransparent(false);
     } else {
@@ -84,7 +84,7 @@ const HeaderNav = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="flex gap-5 uppercase font-semibold">
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/'>home</NavLink></li>
-            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/'>about us</NavLink></li>
+            <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/about'>about us</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/allParts'>Shop</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/blogs'>blogs</NavLink></li>
             <li className='transition duration-200 text-accent hover:text-primary'><NavLink to='/contact'> contacts</NavLink></li>

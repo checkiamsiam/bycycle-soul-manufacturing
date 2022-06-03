@@ -10,7 +10,7 @@ const PurchasePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [user] = useAuthState(auth)
-  const { isLoading, error, data } = useQuery(['partsData'], () => axios.get('http://localhost:5000/parts')
+  const { isLoading, error, data } = useQuery(['partsData'], () => axios.get('https://bycycle-soul-server.herokuapp.com/parts')
   )
   const thisParts = data?.data?.find(p => p?._id === id);
   const [quantity, setQuantity] = useState(thisParts?.minOrdQnt)
@@ -40,7 +40,7 @@ const PurchasePage = () => {
       },
       body: JSON.stringify(postItem)
     };
-    fetch('http://localhost:5000/orders', requestOptions)
+    fetch('https://bycycle-soul-server.herokuapp.com/orders', requestOptions)
       .then(response => response.json())
       .then(data => toast(data.message));
   }

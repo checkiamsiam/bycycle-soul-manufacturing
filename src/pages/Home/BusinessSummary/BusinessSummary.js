@@ -9,44 +9,47 @@ const BusinessSummary = () => {
     <div className='container mx-auto'>
       <div className="grid py-10 px-3 gap-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
 
-        <div className="flex justify-evenly items-center shadow-md rounded-md hover:shadow-secondary hover:shadow-sm p-3">
-          <div className=" text-primary w-1/3">
-            <FaShippingFast className='text-7xl transition duration-300 cursor-pointer hover:bg-neutral p-3 rounded-full' />
+        <div className="flex flex-col justify-evenly items-center shadow-md rounded-md transition  duration-300 hover:-translate-y-1 p-3 cursor-pointer ">
+          <div className="self-start text-success">Shipping Nationally</div>
+          <div className="mb-3 text-primary ">
+            <FaShippingFast className='text-9xl transition duration-300 hover:bg-neutral p-3 rounded-full' />
           </div>
           <div>
-            <div className="stat-title text-success">Shipping Nationally</div>
-            <div className="stat-value text-accent">30+ </div>
-            <div className="stat-value">District</div>
+
+            <div className="text-center text-accent text-3xl">30+ </div>
+            <div className=" text-center text-2xl text-primary">District</div>
           </div>
         </div>
-        <div className="flex justify-evenly items-center shadow-md rounded-md hover:shadow-secondary hover:shadow-sm  p-3">
-          <div className="w-1/3 text-primary">
-            <FaUserCog className='text-7xl transition duration-300 cursor-pointer hover:bg-neutral p-3 rounded-full' />
+        <div className="flex flex-col justify-evenly items-center shadow-md rounded-md transition  duration-300 hover:-translate-y-1 p-3 cursor-pointer">
+          <div className="self-start text-success">Customers</div>
+          <div className="mb-3 text-primary">
+            <FaUserCog className='text-9xl transition duration-300  hover:bg-neutral p-3 rounded-full' />
           </div>
           <div>
-            <div className="stat-title text-success">Customer</div>
-            <div className="stat-value text-accent">100+ </div>
-            <div className="stat-value">Partys</div>
+            <div className=" text-center text-accent text-3xl">100+ </div>
+            <div className=" text-center text-primary text-2xl">Sub Businessman</div>
           </div>
         </div>
-        <div className="flex justify-evenly items-center shadow-md rounded-md hover:shadow-secondary hover:shadow-sm  p-3">
-          <div className="w-1/3 text-primary">
-            <MdSell className='text-7xl transition duration-300 cursor-pointer hover:bg-neutral p-3 rounded-full' />
+        <div className="flex flex-col justify-evenly items-center shadow-md rounded-md transition  duration-300 hover:-translate-y-1  p-3  cursor-pointer">
+          <div className="text-success self-start">Transition</div>
+          <div className=" mb-3 text-primary">
+            <MdSell className='text-9xl transition duration-300 hover:bg-neutral p-3 rounded-full' />
           </div>
           <div>
-            <div className="stat-title text-success">Transition</div>
-            <div className="stat-value text-accent">10+</div>
-            <div className="stat-value">Banks</div>
+
+            <div className="text-accent text-center text-3xl">10+</div>
+            <div className=" text-center text-2xl text-primary">Banks</div>
           </div>
         </div>
-        <div className="flex justify-evenly items-center shadow-md rounded-md hover:shadow-secondary hover:shadow-sm  p-3">
-          <div className="w-1/3 text-primary">
-            <FaToolbox className='text-7xl transition duration-300 cursor-pointer hover:bg-neutral p-3 rounded-full' />
+        <div className="flex flex-col justify-evenly items-center shadow-md rounded-md transition  duration-300 hover:-translate-y-1  p-3  cursor-pointer">
+           <div className=" text-success self-start">Servicing</div>
+          <div className="mb-3 text-primary">
+            <FaToolbox className='text-9xl transition duration-300 hover:bg-neutral p-3 rounded-full' />
           </div>
           <div>
-            <div className="stat-title text-success">Servicing</div>
-            <div className="stat-value text-accent">20+</div>
-            <div className="stat-value">Maker</div>
+           
+            <div className="text-accent text-center text-3xl">20+</div>
+            <div className="text-center text-primary text-2xl">Pro Mechanics</div>
           </div>
         </div>
 

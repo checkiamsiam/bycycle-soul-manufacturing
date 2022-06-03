@@ -8,12 +8,12 @@ const Users = () => {
 
   const [user, loading] = useAuthState(auth);
 
-  const { isLoading, allUser, refetch } = useAllUser(user);
+  const { isLoading, allUser, refetch } = useAllUser();
 
 
   const makeAdmin = (email) => {
 
-    fetch(`http://localhost:5000/users/${email}`, {
+    fetch(`https://bycycle-soul-server.herokuapp.com/users/${email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

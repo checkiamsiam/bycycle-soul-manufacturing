@@ -20,7 +20,7 @@ const AddReview = () => {
       },
       body: JSON.stringify(postData)
     };
-    fetch('http://localhost:5000/reviews', requestOptions)
+    fetch('https://bycycle-soul-server.herokuapp.com/reviews', requestOptions)
       .then(response => response.json())
       .then(data => {
         if (data?.acknowledged) {
@@ -37,7 +37,7 @@ const AddReview = () => {
     <div>
       <div className=' my-5 '>
         <h1 className='text-center text-accent italic'>Add Review</h1>
-        <div className=' text-left flex justify-center'>
+        <div className='text-left flex justify-center'>
           <form onSubmit={handleSubmit(handleReview)}>
 
             <div className="mb-6 ">

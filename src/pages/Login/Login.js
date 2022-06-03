@@ -25,10 +25,10 @@ const Login = () => {
   const [sendPasswordResetEmail, sending2, , error3] = useSendPasswordResetEmail(auth);
   const { register, handleSubmit, getValues, formState: { errors } } = useForm();
 
-  let from = location.state?.from?.pathname || "/";;
+  let from = location?.state?.from?.pathname || "/";;
 
 
-  const [token] = useAddUser(user1 || user2)
+  const [token , loadingToken] = useAddUser(user1 || user2)
 
   useEffect(() => {
 
@@ -39,7 +39,7 @@ const Login = () => {
   }, [token])
 
 
-  if (loading1 || loading3 || sending2) {
+  if (loading1 || loading3 || sending2 || loadingToken) {
     return <Loading></Loading>
   }
 

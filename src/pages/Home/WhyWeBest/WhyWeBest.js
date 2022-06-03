@@ -20,9 +20,10 @@ const WhyWeBest = () => {
             <p className='text-white mt-5 text-xl md:text-2xl italic '>
               ByCycle Soul helps manufacturers maximize the productivity they gain from their bycycle parts like Chain, bell, handle and related supplies. We dedicated to helping our customers andreduce operating costs.
             </p>
+            <Link to="/about" className='uppercase rounded-md btn btn-md bg-gradient-to-r from-primary to-secondary mt-3'>More About Us</Link>
           </div>
         </div>
-        <div className='md:w-1/2 flex items-center justify-center'>
+        <div className='md:w-1/2 flex  items-center justify-center'>
           <div>
             <div className="cursor-pointer md:p-6 py-6 bg-transparent rounded-lg ">
               <div>

@@ -1,4 +1,4 @@
-.login::after , .signup::after , .bg-dashboard::after{
+.login::after , .signup::after {
   content: '';
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;

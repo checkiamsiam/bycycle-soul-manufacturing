@@ -14,7 +14,7 @@ import Loading from '../../../shared&minifier/Loading/Loading';
 
 const Review = () => {
 
-  const { isLoading, data } = useQuery('reviewData', () => axios.get('http://localhost:5000/reviews')
+  const { isLoading, data } = useQuery('reviewData', () => axios.get('https://bycycle-soul-server.herokuapp.com/reviews')
 
   )
 

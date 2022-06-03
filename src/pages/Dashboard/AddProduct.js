@@ -31,7 +31,7 @@ const AddProduct = () => {
             },
             body: JSON.stringify(postItem)
           };
-          fetch('http://localhost:5000/parts', requestOptions)
+          fetch('https://bycycle-soul-server.herokuapp.com/parts', requestOptions)
             .then(response => response.json())
             .then(data => {
               if (data?.acknowledged) {
@@ -51,7 +51,7 @@ const AddProduct = () => {
 
 
   return (
-    <div className=' my-32'>
+    <div className=''>
       <h1 className='text-center text-accent italic'>Add Product</h1>
       <div className=' text-left flex justify-center py-5'>
         <form onSubmit={handleSubmit(handleAddProduct)} className=" w-4/5">
