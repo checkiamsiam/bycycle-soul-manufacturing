@@ -2,6 +2,13 @@
 
 ## Live Site Link [https://bycycle-soul---manufacturing.web.app/](https://bycycle-soul---manufacturing.web.app/)
 
+## `Key Features`
+
+- Authorization access
+- User's Profile Edition
+- Safe Transaction
+- Amazing User Experience
+- Eye Catchy Home Page
 
 ## `Packages Used`
 
