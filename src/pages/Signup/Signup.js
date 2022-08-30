@@ -36,7 +36,7 @@ const SignUp = () => {
       navigate(from, { replace: true });
     }
 
-  }, [token])
+  }, [token , from , navigate])
 
   const handleAgreeTerms = () => {
     setAgree(!agree)

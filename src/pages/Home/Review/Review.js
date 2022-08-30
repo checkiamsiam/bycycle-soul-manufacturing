@@ -9,18 +9,15 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import ReactStars from "react-rating-stars-component";
 import { useQuery } from 'react-query';
 import axios from 'axios';
-import Loading from '../../../shared&minifier/Loading/Loading';
 
 
 const Review = () => {
 
-  const { isLoading, data } = useQuery('reviewData', () => axios.get('https://bycycle-soul-server.herokuapp.com/reviews')
+  const { data } = useQuery('reviewData', () => axios.get('https://bycycle-soul-server.herokuapp.com/reviews')
 
   )
 
-  if (isLoading) {
-    return <Loading></Loading>
-  }
+ 
   return (
     <div className='review-section relative h-screen bg-reviewbg bg-cover bg-no-repeat bg-center bg-fixed flex justify-center items-center'>
       <Swiper

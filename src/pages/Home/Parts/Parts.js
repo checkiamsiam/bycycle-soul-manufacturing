@@ -6,15 +6,12 @@ import Loading from '../../../shared&minifier/Loading/Loading';
 
 const Parts = () => {
   const navigate = useNavigate();
-  const { isLoading, data: latest } = useQuery('partsDataLatest', () => axios.get('https://bycycle-soul-server.herokuapp.com/partsLatest')
+  const { data: latest } = useQuery('partsDataLatest', () => axios.get('https://bycycle-soul-server.herokuapp.com/partsLatest')
   )
 
   const latestProductLg = latest?.data?.slice(0, 6)
   const latestProductSm = latest?.data?.slice(0, 3)
 
-  if (isLoading) {
-    return <Loading></Loading>
-  }
 
   return (
     <div className='container mx-auto py-5'>

@@ -7,11 +7,10 @@ import './Header.css'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import Loading from '../Loading/Loading';
 
 const HeaderNav = () => {
   const navigate = useNavigate();
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false)
   const [transparent, setTransparent] = useState(true)
   const [show, setShow] = useState(false);
@@ -65,9 +64,7 @@ const HeaderNav = () => {
     await navigate('/')
   }
 
-  if (loading) {
-    return <Loading></Loading>
-  }
+  
 
   return (
     <div className={`${hideness ? 'fixed' : 'sticky'} top-0 showNav ${show && 'hideNav'} ${transparent ? 'bg-transparent' : 'bg-white shadow-lg'}  z-50`}>
